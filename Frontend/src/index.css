@@ -1,3 +1,12 @@
 :root{
-  background-color: rgb(238, 237, 237);
+  background-color: white;
+  user-select: none;
+  font-family: 'cursive' !important;
+}
+.description{  
+  height: 4px;
+width: 0.8cm;
+position: absolute;
+border-radius: 3px;
+background: linear-gradient(to right, #000084, #ff0000);
 }

@@ -24,7 +24,7 @@ async function signup(data,setloading,changeAuthMode,SetFlag)
     catch(err){
      
       toast_fail('Registration Failed Internal Error');
-      console.log(err)
+      console.error(err)
     }
    }
   setloading(false)

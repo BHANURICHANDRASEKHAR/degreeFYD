@@ -1,4 +1,4 @@
-[
+const data=[
     {
         "Institute_Name":"Zee Institute Of Creative Art (ZICA), Indore",
         "Institute_city":"Indore",
@@ -4992,3 +4992,4 @@
         "Duration_Type":"Year"
     }
 ]
+export default data

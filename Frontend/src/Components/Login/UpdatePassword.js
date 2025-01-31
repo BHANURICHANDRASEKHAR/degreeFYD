@@ -15,7 +15,7 @@ export default async function UpdatePassword(setloading,data,resenddata,setShow)
         })
         if(res.data.status)
         {
-            toast_success(res.data.msg);
+            toast_success('Password updated successfully');
             storeCookie(res.data.token);
             setShow(false)
         }

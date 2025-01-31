@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest-Based Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background: #ffcc00;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Find Your Perfect Subject</h2>
+        <input type="text" id="name" placeholder="Enter your name">
+        <label><input type="checkbox" name="interest" value="Technology"> Technology</label>
+        <label><input type="checkbox" name="interest" value="Creativity"> Creativity</label>
+        <label><input type="checkbox" name="interest" value="Science"> Science</label>
+        <label><input type="checkbox" name="interest" value="Finance"> Finance</label>
+        <button onclick="getRecommendation()">Get Recommendation</button>
+        <div id="recommendation" class="result" style="display: none;"></div>
+    </div>
+    <script>
+        function getRecommendation() {
+            let name = document.getElementById("name").value;
+            let interests = document.querySelectorAll('input[name="interest"]:checked');
+            let selected = Array.from(interests).map(checkbox => checkbox.value);
+            
+            let recommendations = {
+                "Technology": "Computer Science - Dive into coding, AI, and cybersecurity!",
+                "Creativity": "Graphic Design - Explore digital arts, branding, and illustration!",
+                "Science": "Biotechnology - Unlock the secrets of life with cutting-edge research!",
+                "Finance": "Accounting - Master numbers, investments, and financial strategies!"
+            };
+            
+            let output = `<h3>Hello, ${name}!</h3><p>Your recommended subjects:</p>`;
+            selected.forEach(interest => {
+                output += `<p><b>${interest}:</b> ${recommendations[interest]}</p>`;
+            });
+            
+            let resultDiv = document.getElementById("recommendation");
+            resultDiv.innerHTML = output;
+            resultDiv.style.display = "block";
+        }
+    </script>
+</body>
+</html>

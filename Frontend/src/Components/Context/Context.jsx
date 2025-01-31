@@ -4,7 +4,7 @@ export const UserContext=React.createContext();
 export default function Context({children}) {
     const [user, setUser] = useState(null)
     const [flag,setFlag] = useState(false)
-    const [SearchResults, SetSearchResults] = useState([])
+    const [SearchResults, SetSearchResults] = useState(null)
     const [show,SetShow]=useState(false)
     useEffect(()=>{
     const token=getToken();

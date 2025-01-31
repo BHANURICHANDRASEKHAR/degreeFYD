@@ -46,7 +46,7 @@ export function storeCookie(token,flag)
 {
       const date = new Date();
                 date.setDate(date.getDate() + 365); 
-                Cookie.set('user-token', token, { 
+                Cookie.set('degreeFYd-user-token', token, { 
                     secure: true, 
                     sameSite: 'strict', 
                     expires: date 
